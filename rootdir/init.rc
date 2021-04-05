@@ -1232,6 +1232,12 @@ on property:persist.security.deny_new_usb=dynamic
 on property:security.deny_new_usb=*
     write /proc/sys/kernel/deny_new_usb ${security.deny_new_usb}
 
+on property:persist.native_debug=true
+    write /proc/sys/kernel/yama/ptrace_scope 0
+
+on property:persist.native_debug=false
+    write /proc/sys/kernel/yama/ptrace_scope 2
+
 # perf_event_open syscall security:
 # Newer kernels have the ability to control the use of the syscall via SELinux
 # hooks. init tests for this, and sets sys_init.perf_lsm_hooks to 1 if the
