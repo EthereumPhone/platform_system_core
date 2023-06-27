@@ -710,6 +710,7 @@ on post-fs-data
 
     mkdir /data/vendor 0771 root root encryption=Require
     mkdir /data/wallet_files 0771 system system encryption=Require
+    mkdir /data/lightclient 0771 system system encryption=Require
     mkdir /data/vendor_ce 0771 root root encryption=None
     mkdir /data/vendor_de 0771 root root encryption=None
     mkdir /data/vendor/hardware 0771 root root
